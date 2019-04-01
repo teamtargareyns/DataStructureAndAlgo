@@ -15,7 +15,6 @@ public class Queue_reverse {
     {
         while (!queue.isEmpty())
         {
-            //System.out.print(queue.peek() + " ");
             System.out.print(queue.peek() + " ");
             queue.remove();
         }
