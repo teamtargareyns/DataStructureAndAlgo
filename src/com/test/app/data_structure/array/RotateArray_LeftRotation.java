@@ -1,7 +1,7 @@
 package com.test.app.data_structure.array;
 
 /**
- * Title of problem statement : Reversal algorithm for array rotation
+ * Title of problem statement : Reversal algorithm for array rotation(left rotation)
  *
  * Approach for this problem statement
  * <p>
@@ -13,7 +13,7 @@ package com.test.app.data_structure.array;
  * Reverse all, we get (ArBr)r = [3, 4, 5, 6, 7, 1, 2]
  */
 
-public class RotateArray {
+public class RotateArray_LeftRotation {
 
     /* Function to left rotate arr[] of size n by d */
     static void leftRotate(int arr[], int d) {
@@ -44,7 +44,7 @@ public class RotateArray {
     /* Driver program to test above functions */
     public static void main(String[] args) {
         int arr[] = {1, 2, 3, 4, 5, 6, 7};
-        leftRotate(arr, 2); // Rotate array by 2(element position)
+        leftRotate(arr, 2); //Left Rotate array by 2(element position)
         printArray(arr);
     }
 
