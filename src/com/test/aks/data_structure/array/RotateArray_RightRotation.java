@@ -12,7 +12,7 @@ package com.test.aks.data_structure.array;
  * <p>
  * Reverse all, we get (AB)r = [10 9 8 7 6 5 4 3 2 1]
  * Reverse A, we get (ArB)r = [8 9 10 7 6 5 4 3 2 1]
- * Reverse B, we get (ArBr)r = [8, 9, 10 1, 2, 3, 4, 5, 6, 7]
+ * Reverse B, we get (ArBr)r = [8, 9, 10, 1, 2, 3, 4, 5, 6, 7]
  */
 
 public class RotateArray_RightRotation {
