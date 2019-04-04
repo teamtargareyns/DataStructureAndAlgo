@@ -13,7 +13,7 @@ public class MoveZerosAtEnd {
      * */
 
 
-    //By Swaping
+    //By Swaping:Two Pointer Technique
     //Another aproach is firt count number of zeros, place all non zero element at start of array, fill the remaining array with zero
     public static void moveZeroAtEnd(int arr[]){
         for(int i = 0,j= 0,k=0;k<arr.length;k++){
