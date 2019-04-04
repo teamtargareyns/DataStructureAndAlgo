@@ -32,6 +32,22 @@ public class MoveZerosAtEnd {
         printArray(arr);
     }
 
+    //Swap 2
+    public static void moveZeroAtEnd2(int arr[]){
+        for(int i = 0,count= 0;i<arr.length;i++){
+            if(arr[i] != 0){
+                int temp = arr[count];
+                arr[count] = arr[i];
+                arr[i] = temp;
+                count++;
+            }
+            printArray(arr);
+            System.out.print("\n");
+        }
+
+        printArray(arr);
+    }
+
 
     static void printArray(int arr[]) {
         for (int i = 0; i < arr.length; i++)
@@ -42,6 +58,6 @@ public class MoveZerosAtEnd {
     public static void main(String[] args) {
         //int arr[] = {-1, 1, 2, 3, 4, -1, 6, -1, -1, 9};
         int arr1[] = {1, 9, 8, 4, 0, 0, 2, 7, 0, 6, 0};
-        moveZeroAtEnd(arr1);
+        moveZeroAtEnd2(arr1);
     }
 }
