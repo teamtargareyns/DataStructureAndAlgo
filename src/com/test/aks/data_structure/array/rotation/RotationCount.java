@@ -1,4 +1,4 @@
-package com.test.aks.data_structure.array;
+package com.test.aks.data_structure.array.rotation;
 
 /**
  * Title of problem statement : Find the Rotation Count in Rotated Sorted array(ascending order)

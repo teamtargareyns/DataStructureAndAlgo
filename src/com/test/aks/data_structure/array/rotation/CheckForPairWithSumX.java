@@ -1,4 +1,4 @@
-package com.test.aks.data_structure.array;
+package com.test.aks.data_structure.array.rotation;
 
 
 import java.util.Arrays;

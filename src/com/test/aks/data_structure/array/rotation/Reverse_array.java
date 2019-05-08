@@ -1,4 +1,4 @@
-package com.test.aks.data_structure.array;
+package com.test.aks.data_structure.array.rotation;
 
 public class Reverse_array {
 

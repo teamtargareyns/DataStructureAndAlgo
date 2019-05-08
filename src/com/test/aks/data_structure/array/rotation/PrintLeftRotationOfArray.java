@@ -1,4 +1,4 @@
-package com.test.aks.data_structure.array;
+package com.test.aks.data_structure.array.rotation;
 
 /**
  * Title of problem statement : Print left rotation of array in O(n) time and O(1) space
