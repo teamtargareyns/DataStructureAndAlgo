@@ -1,4 +1,4 @@
-package com.test.aks.data_structure.array.rotation;
+package com.test.aks.data_structure.geeksforgeeks.array.rotation;
 
 /**
  * Title of problem statement : Reversal algorithm for array rotation(left rotation)
