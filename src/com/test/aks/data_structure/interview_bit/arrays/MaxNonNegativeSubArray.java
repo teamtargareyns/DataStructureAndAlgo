@@ -6,6 +6,27 @@ import java.util.List;
 
 public class MaxNonNegativeSubArray {
 
+    public int[] maxset(int[] A) {
+        Integer[] arr = new Integer[A.length];
+        for (int i = 0; i < arr.length; ++i) {
+            arr[i] = A[i];
+        }
+
+        //Integer arr[] = {1, 0, 4, 0, 1, -1, -1, 0, 0, 1, 0};
+        //Integer arr[] = {1, 2, 5, -7, 2, 3};
+        int n = arr.length;
+        List<Integer> returnArr = longestSubarry(arr, n);
+
+        int size = returnArr.size();
+        int[] result = new int[size];
+
+        for (int i = 0; i < size; ++i) {
+            result[i] = returnArr.get(i);
+        }
+
+        return result;
+    }
+
     // Function that returns the longest
     // subarray of non-negative integers
     private static ArrayList<Integer> longestSubarry(Integer arr[], int n) {
@@ -21,7 +42,7 @@ public class MaxNonNegativeSubArray {
             if (ele >= 0) {
                 newSum += ele;
                 newArray.add(ele);
-                if (newSum > maxSum) {
+                if (newSum > maxSum || (newSum == maxSum && newArray.size()>maxArray.size())) {
                     maxSum = newSum;
                     maxArray.clear();
                     maxArray.addAll(newArray);
@@ -36,26 +57,29 @@ public class MaxNonNegativeSubArray {
         System.out.print("\n'''''''maxSum : " + maxSum + "\n");
         System.out.print("\n'''''''maxArray'''''\n");
         for (Integer i : maxArray) {
-            System.out.println(i + ", ");
+            System.out.print(i);
         }
+
+        System.out.println("\n'''''''''''''''''''''''''''''''''''''");
 
         System.out.print("\n'''''''newSum : " + newSum + "\n");
         System.out.print("\n'''''''newArray'''''\n");
         for (Integer i : newArray) {
-            System.out.println("\n");
-            System.out.print(i + ", ");
+            System.out.print(i);
         }
+
+        System.out.println("\n'''''''''''''''''''''''''''''''''''''");
 
         if (maxSum > newSum) {
             return maxArray;
         } else if (newSum > maxSum) {
             return newArray;
-        }else if (newSum == maxSum) {
-           if(maxArray.size()>newArray.size()){
-               return maxArray;
-           }else {
-               return newArray;
-           }
+        } else if (newSum == maxSum) {
+            if (maxArray.size() > newArray.size()) {
+                return maxArray;
+            } else {
+                return newArray;
+            }
         }
 
         return null;
@@ -64,11 +88,22 @@ public class MaxNonNegativeSubArray {
     // Driver code
     public static void main(String[] args) {
         //Integer arr[] = {1, 0, 4, 0, 1, -1, -1, 0, 0, 1, 0};
-        Integer arr[] = {1, 2, 5, -7, 2, 3};
+        //Integer arr[] = {1, 2, 5, -7, 2, 3};
+        /*Integer arr[] = { 1, 2, 3, -5, 1, 1 };
         int n = arr.length;
         List<Integer> returnArr = longestSubarry(arr, n);
         System.out.println("\n");
         System.out.println("Returned Arr");
-        System.out.println(returnArr);
+        System.out.println(returnArr);*/
+
+        //int arr[] = {1, 2, 5, -7, 2, 3};
+        //int arr[] = {1, 2, 3, -5, 1, 1};
+        //int arr[] = {0, 0, -1, 0 };
+        int arr[] = {2,3, -1, 5};
+        int[] output = new MaxNonNegativeSubArray().maxset(arr);
+        System.out.println("\n\n''''''''''''''''''OUTPUT'''''''''''''''''''");
+        for (int element : output) {
+            System.out.println(element);
+        }
     }
 }
