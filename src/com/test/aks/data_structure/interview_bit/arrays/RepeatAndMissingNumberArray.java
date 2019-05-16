@@ -19,7 +19,7 @@ public class RepeatAndMissingNumberArray {
         long repeatingItem = 0;
         long missingItem = 0;
 
-        for (int index = 0; index < A.length; ++index) {
+        /*for (int index = 0; index < A.length; ++index) {
             if (A[index] <= minElement) {
                 minElement = A[index];
             }
@@ -27,7 +27,7 @@ public class RepeatAndMissingNumberArray {
             if (A[index] >= maxElement) {
                 maxElement = A[index];
             }
-        }
+        }*/
 
         //find missing item
         int currentItem = 1; //as problem statement says arr will be within 1 to n
@@ -60,12 +60,14 @@ public class RepeatAndMissingNumberArray {
         }
 
 
-        System.out.println("minElement : " + minElement);
-        System.out.println("maxElement : " + maxElement);
+       /* System.out.println("minElement : " + minElement);
+        System.out.println("maxElement : " + maxElement);*/
         System.out.println("missingItem : " + missingItem);
         System.out.println("repeatingItem : " + repeatingItem);
 
-        return null;
+        int[] arr = {(int) repeatingItem, (int) missingItem};
+
+        return arr;
     }
 
 
@@ -73,12 +75,10 @@ public class RepeatAndMissingNumberArray {
     public static void main(String[] args) {
         //int arr[] = {3, 1, 2, 5, 6, 7, 8, 9, 3};
         //int arr[] = {4, 1, 2, 5, 6, 7, 8, 9, 4};
-        int arr[] = {4, 11, 1,2, 5, 6, 7, 8, 9, 10,5};
-        new RepeatAndMissingNumberArray().repeatedNumber(arr);
-        /*int[] output = new RepeatAndMissingNumberArray().repeatedNumber(arr);
+        int arr[] = {4, 11, 1, 2, 5, 6, 7, 8, 9, 10, 5};
+        //new RepeatAndMissingNumberArray().repeatedNumber(arr);
+        int[] output = new RepeatAndMissingNumberArray().repeatedNumber(arr);
         System.out.println("\n\n''''''''''''''''''OUTPUT'''''''''''''''''''");
-        for (int element : output) {
-            System.out.println(element);
-        }*/
+        System.out.println("["+output[0]+", "+output[1]+"]");
     }
 }
