@@ -35,12 +35,12 @@ public class MaxNonNegativeSubArray {
         ArrayList<Integer> newArray = new ArrayList<Integer>();
 
         // Initialize result
-        int maxSum = 0;
-        int newSum = 0;
+        long maxSum = 0;
+        long newSum = 0;
 
         for (Integer ele : inputArr) {
             if (ele >= 0) {
-                newSum += ele;
+                newSum = newSum + ele;
                 newArray.add(ele);
                 if (newSum > maxSum || (newSum == maxSum && newArray.size()>maxArray.size())) {
                     maxSum = newSum;
@@ -99,7 +99,8 @@ public class MaxNonNegativeSubArray {
         //int arr[] = {1, 2, 5, -7, 2, 3};
         //int arr[] = {1, 2, 3, -5, 1, 1};
         //int arr[] = {0, 0, -1, 0 };
-        int arr[] = {2,3, -1, 5};
+        //int arr[] = {2,3, -1, 5};
+        int arr[] = {1967513926, 1540383426, -1303455736, -521595368 };
         int[] output = new MaxNonNegativeSubArray().maxset(arr);
         System.out.println("\n\n''''''''''''''''''OUTPUT'''''''''''''''''''");
         for (int element : output) {
