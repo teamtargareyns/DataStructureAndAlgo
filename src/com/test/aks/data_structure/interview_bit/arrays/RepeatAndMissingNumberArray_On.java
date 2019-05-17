@@ -5,20 +5,23 @@ package com.test.aks.data_structure.interview_bit.arrays;
  * <p>
  * Input -  int arr[] = {3, 1, 2, 5, 3};
  * Output - [3,4]
+ *
  */
 
 public class RepeatAndMissingNumberArray_On {
+
+
 
     private static void printTwoElements(int arr[], int size) {
         int i;
         System.out.print("The repeating element is ");
 
         for (i = 0; i < size; i++) {
-            int abs_val = Math.abs(arr[i]);
-            if (arr[abs_val - 1] > 0)
-                arr[abs_val - 1] = -arr[abs_val - 1];
+            int value = Math.abs(arr[i]);
+            if (arr[value - 1] > 0)
+                arr[value - 1] = -arr[value - 1];
             else
-                System.out.println(abs_val);
+                System.out.println(value);
         }
 
         System.out.print("And the missing element is ");
