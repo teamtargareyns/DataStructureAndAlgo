@@ -1,5 +1,10 @@
 package com.test.aks.data_structure.interview_bit.arrays.sorting;
 
+
+/**
+ * Time complexity - O(n2) - avoid this sorting
+ * Space Complexity - 0(1)
+ */
 public class BubbleSort {
 
     private static void sortArray(int arr[]) {
