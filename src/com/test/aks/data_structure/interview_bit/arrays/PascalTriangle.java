@@ -43,7 +43,7 @@ public class PascalTriangle {
 
     // Driver program
     public static void main(String[] args) {
-        int n = 7;
+        int n = 5;
         printPascalTriangle(n);
     }
 }
