@@ -33,6 +33,7 @@ public class RepeatAndMissingNumberArray_OrderN {
 
     // Driver code
     public static void main(String[] args) {
+        //int arr[] = {7, 3, 4, 5, 5, 6, 2};
         int arr[] = {7, 3, 4, 5, 5, 6, 2};
         /*int a= 1;
         int b = 2;
