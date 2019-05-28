@@ -11,6 +11,7 @@ public class QuickSort {
      * arr[] --> Array to be sorted,
      * low  --> Starting index,
      * high  --> Ending index
+     *
      * @param arr
      * @param low
      * @param high
@@ -19,14 +20,14 @@ public class QuickSort {
         if (low < high) {
             /**
              * pivotIndex is partitioning index,
-             * arr[pivotIndex] is now at right place
+             * arr[pivotIndex] will be at right place post below method execution
              */
             int pivotIndex = partition(arr, low, high);
             /**
              * Recursively sort elements before partition and after partition
              */
-            quickSort(arr, low, pivotIndex  - 1);
-            quickSort(arr, pivotIndex  + 1, high);
+            quickSort(arr, low, pivotIndex - 1);
+            quickSort(arr, pivotIndex + 1, high);
         }
     }
 
@@ -37,14 +38,15 @@ public class QuickSort {
      * position in sorted array, and places all
      * smaller to left of pivot and all greater
      * elements to right of pivot
-     * @param arr - arr with ow and high index
-     * @param low - starting index of arr
+     *
+     * @param arr  - arr with ow and high index
+     * @param low  - starting index of arr
      * @param high - last index of arr
      * @return
      */
     int partition(int arr[], int low, int high) {
         int pivotElement = arr[high];
-        int indexOfSoFarSorted= (low - 1);
+        int indexOfSoFarSorted = (low - 1);
 
         /**
          * Run loop from first element of arr to
@@ -80,14 +82,34 @@ public class QuickSort {
          */
 
         int temp = arr[indexOfSoFarSorted + 1];
-        arr[indexOfSoFarSorted+1] = pivotElement; //or arr[high]
+        arr[indexOfSoFarSorted + 1] = pivotElement; //or arr[high]
         arr[high] = temp;
 
         //Now pivot index is indexOfSoFarSorted+1
-        int pivotIndex = indexOfSoFarSorted+1;
+        int pivotIndex = indexOfSoFarSorted + 1;
 
         //return pivot index now
         return pivotIndex;
+    }
+
+    /* A utility function to print array of size n */
+    static void printArray(int arr[]) {
+        int n = arr.length;
+        for (int i = 0; i < n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+
+    // Driver program
+    public static void main(String args[]) {
+        int arr[] = {10, 34, 45, 67, 78, 91, 76, 56, 43, 25, 7, 7, 8, 9, 1, 5};
+        int n = arr.length;
+
+        QuickSort ob = new QuickSort();
+        ob.quickSort(arr, 0, n - 1);
+
+        System.out.println("sorted array");
+        printArray(arr);
     }
 
 }

@@ -8,7 +8,7 @@ package com.test.aks.data_structure.interview_bit.arrays;
  *
  */
 
-public class RepeatAndMissingNumberArray_On {
+public class RepeatAndMissingNumberArray_OrderN {
 
 
 
