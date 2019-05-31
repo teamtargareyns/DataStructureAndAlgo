@@ -40,7 +40,7 @@ public class Palindrome {
         // two characters, check if
         // middle substring is also
         // palindrome or not.
-        if (startingIndex < endingIndex+1)
+        if (startingIndex < endingIndex)
             return isPalindrome(str, startingIndex + 1, endingIndex - 1);
 
 
