@@ -16,7 +16,7 @@ public class LargestNumber {
         Arrays.sort(strArr, new Comparator<String>() {
             public int compare(String a, String b) {
 
-                // first append a at the end of b
+                // first append b at the end of a
                 String ab = a + b;
 
                 // then append a at the end of b
