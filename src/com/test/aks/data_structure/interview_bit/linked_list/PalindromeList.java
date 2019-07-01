@@ -11,13 +11,12 @@ public class PalindromeList {
             return 0;
         }
 
-        Node newHead = new Node(head.value, head.next);
         Node faster = head.next;
         Node slower = head;
 
         //reverse list
-        Node reverseHead = reverseList(newHead);
-        return checkPalindromeUtil(newHead, reverseHead, faster, slower);
+        Node reverseHead = reverseList(head);
+        return checkPalindromeUtil(head, reverseHead, faster, slower);
     }
 
     private int checkPalindromeUtil(Node head, Node reverseHead, Node faster, Node slower) {
@@ -49,7 +48,7 @@ public class PalindromeList {
 
     private Node reverseList(Node head) {
         Node prev = null;
-        Node current = new Node(head.value, head.next);
+        Node current = head;
         Node next = null;
 
         while (current != null) {
@@ -70,12 +69,12 @@ public class PalindromeList {
     }
 
     private void initProgram() {
-        Node n1 = new Node(1, null);
-        Node n2 = new Node(2, null);
-        Node n3 = new Node(3, null);
-        Node n4 = new Node(4, null);
-        Node n5 = new Node(2, null);
-        Node n6 = new Node(1, null);
+        Node n1 = new Node(1);
+        Node n2 = new Node(2);
+        Node n3 = new Node(3);
+        Node n4 = new Node(4);
+        Node n5 = new Node(2);
+        Node n6 = new Node(1);
 
         //init next pointer
         n1.next = n2;
@@ -95,9 +94,17 @@ public class PalindromeList {
         int value;
         Node next;
 
-        public Node(int value, Node next) {
+        public Node(int value) {
             this.value = value;
-            this.next = next;
+            this.next = null;
         }
+
+       /* public Node(Node head) {
+            if (head != null) {
+                this.value = head.value;
+                this.next = new Node(head.next);
+            }
+        }*/
     }
+
 }
