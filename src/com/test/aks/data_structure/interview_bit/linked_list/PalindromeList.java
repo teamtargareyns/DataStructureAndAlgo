@@ -5,63 +5,33 @@ public class PalindromeList {
     Node head;
 
     private int isPalindrome(Node head) {
-        //slower and faster
-        //move faster pointer two times and then move slower pointer only one time
-        if (head.next == null) {
-            return 0;
-        }
-
-        Node faster = head.next;
+        // slow advances once per itaration
+        // fast advances twice per iteration
+        // head is a pointer to the reversed first half of the list
+        Node faster = head;
         Node slower = head;
+        Node reverseHead = null;
+        while (faster!=null){
+            Node next = slower.next;
+            faster = faster.next;
+            if(faster!=null){
+                faster = faster.next;
+                slower.next = reverseHead;
+                reverseHead = slower;
+            }
 
-        //reverse list
-        Node reverseHead = reverseList(head);
-        return checkPalindromeUtil(head, reverseHead, faster, slower);
-    }
-
-    private int checkPalindromeUtil(Node head, Node reverseHead, Node faster, Node slower) {
-        int val1 = head.value;
-        int val2 = reverseHead.value;
-        //
-        if (val1 != val2) {
-            return 0;
+            slower = next;
         }
 
-        //increase faster and slower pointer
-        if (faster.next == null || faster.next.next == null) {
-            return 1;
-        } else {
-            faster = faster.next.next;
+        // slow is a pointer to the second half of the list
+        // head is a pointer to the first half of the list (reversed)
+        while (slower != null && reverseHead != null) {
+            if (slower.value != reverseHead.value)
+                return 0;
             slower = slower.next;
-        }
-
-
-        // If there are more than
-        // two characters, check if
-        // middle substring is also
-        // palindrome or not.
-        if (faster.next != null) {
-            return checkPalindromeUtil(head.next, reverseHead.next, faster, slower);
+            reverseHead = reverseHead.next;
         }
         return 1;
-    }
-
-    private Node reverseList(Node head) {
-        Node prev = null;
-        Node current = head;
-        Node next = null;
-
-        while (current != null) {
-            next = current.next;
-            current.next = prev;
-            prev = current;
-            current = next;
-        }
-
-        /*head = prev;
-        return head;*/
-
-        return prev;
     }
 
     public static void main(String[] args) {
@@ -72,17 +42,17 @@ public class PalindromeList {
         Node n1 = new Node(1);
         Node n2 = new Node(2);
         Node n3 = new Node(3);
-        Node n4 = new Node(4);
-        Node n5 = new Node(2);
-        Node n6 = new Node(1);
+        Node n4 = new Node(2);
+        Node n5 = new Node(1);
+        //Node n6 = new Node(1);
 
         //init next pointer
         n1.next = n2;
         n2.next = n3;
         n3.next = n4;
         n4.next = n5;
-        n5.next = n6;
-        n6.next = null;
+        n5.next = null;
+        //n6.next = null;
         //
         head = n1;
 
