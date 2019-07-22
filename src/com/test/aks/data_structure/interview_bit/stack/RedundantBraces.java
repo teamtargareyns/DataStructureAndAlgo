@@ -25,8 +25,8 @@ public class RedundantBraces {
             } else if (chr == ')') {
                 boolean isPopped = false;
                 while(stack.peek() != '(') {
-                    isPopped = true;
                     stack.pop();
+                    isPopped = true;
                 }
                 if(!isPopped) return 1;
                 stack.pop();
