@@ -82,17 +82,17 @@ public class SolutionAnagram {
                             String res = isSubStringExist(anagramWords, str1, str2);
                             if (null == res) {
                                 builderString = actualStr1 + "," + actualStr2;
-                            } else if(res.isEmpty()){
-                                builderString="";
-                            }else {
+                            } else if (res.isEmpty()) {
+                                builderString = "";
+                            } else {
                                 builderString = res;
                             }
                         } else {
                             builderString = builderString + "," + actualStr2;
                         }
-                        //add to list
-                        //anagramWords.add(builderString);
-                        //System.out.print("Strings are Anagram");
+
+                        //sort strings
+                        builderString = sortBuilderString(builderString);
                     }
 
                 }
@@ -160,6 +160,30 @@ public class SolutionAnagram {
         } else {
             System.out.print("Both Strings Must have the same number of Character to be an Anagram");
         }*/
+    }
+
+    private static String sortBuilderString(String builerString) {
+
+        String[] arr = builerString.split(",");
+        List<String> tempList = new ArrayList<>();
+        tempList.addAll(Arrays.asList(arr));
+        Collections.sort(tempList);
+
+        String sortedString = "";
+
+        for (int i = 0; i < tempList.size(); i++) {
+            if (i < tempList.size()-1) {
+                if (sortedString.isEmpty()) {
+                    sortedString = tempList.get(i) + ",";
+                } else {
+                    sortedString = sortedString + tempList.get(i) + ",";
+                }
+            } else {
+                sortedString = sortedString + tempList.get(i);
+            }
+        }
+
+        return sortedString;
     }
 
 
