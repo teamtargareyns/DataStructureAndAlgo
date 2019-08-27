@@ -65,8 +65,13 @@ public class CheckForPairWithSumX {
     // Driver code
     public static void main(String args[]) {
         //int A[] = {1, 4, 45, 6, 10, -8};
-        int A[] = {11, 15, 6, 8, 9, 10};
-        int n = 16;
+        //int A[] = {11, 15, 6, 8, 9, 10};
+        //int n = 16;
+
+        int A[] = {7,5,3,4,1};
+        int n = 4;
+
+
         int arr_size = A.length;
 
         // Function calling
