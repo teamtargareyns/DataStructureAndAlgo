@@ -16,10 +16,10 @@ public class ReverseListWithoutRecurssion {
             current = next;
         }
 
-        /*head = prev;
-        return head;*/
+        head = prev;
+        return head;
 
-        return prev;
+        //return prev;
     }
 
     public static void main(String[] args) {

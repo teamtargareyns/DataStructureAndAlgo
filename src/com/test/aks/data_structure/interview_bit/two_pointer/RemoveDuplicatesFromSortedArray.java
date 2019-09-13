@@ -16,7 +16,7 @@ public class RemoveDuplicatesFromSortedArray {
             if (current == -1
                     || current != item) {
                 list.set(i, item);
-                current = list.get(j);
+                current = item;
                 i++;
             }
         }

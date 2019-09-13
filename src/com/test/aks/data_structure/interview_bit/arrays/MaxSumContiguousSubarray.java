@@ -17,7 +17,7 @@ public class MaxSumContiguousSubarray {
 
            //two conditions
             //1.
-            if(maxResultSum>maxTilHere){
+            if(maxTilHere>maxResultSum){
                 maxResultSum = maxTilHere;
             }
 

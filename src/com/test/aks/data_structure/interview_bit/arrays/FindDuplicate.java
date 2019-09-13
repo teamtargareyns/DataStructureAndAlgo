@@ -28,7 +28,7 @@ public class FindDuplicate {
     // Driver code
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
-        Integer arr[] = {7, 3, 4, 5, 5, 6, 2};
+        Integer arr[] = {7, 7, 4, 5, 1, 6, 2};
         list.addAll(Arrays.asList(arr));
         repeatedNumber(list);
     }
