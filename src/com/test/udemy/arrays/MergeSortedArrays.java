@@ -18,7 +18,7 @@ public class MergeSortedArrays {
 
     public static void main(String[] args) {
         int[] arr1 = {0, 3, 4, 31};
-        int[] arr2 = {4, 6, 30};
+        int[] arr2 = {4, 6, 30, 32};
         display(mergeSortedArrays(arr1, arr2));
     }
 
