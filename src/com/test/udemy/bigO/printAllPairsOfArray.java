@@ -5,7 +5,7 @@ import java.util.List;
 
 public class printAllPairsOfArray {
 
-    String[] charList = new String[]{"a", "b", "c", "d"};
+    String[] charList = new String[]{"a", "b", "c", "d"};//O(n2)
 
     private void printAllPairsOfArray(){
 

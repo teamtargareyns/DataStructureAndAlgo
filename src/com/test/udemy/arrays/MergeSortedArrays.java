@@ -1,6 +1,8 @@
 package com.test.udemy.arrays;
 
 
+import com.test.udemy.Util;
+
 /**
  * Title of problem statement : Given two sorted integer arrays. Merge them in sorted manner
  * <p>
@@ -19,7 +21,7 @@ public class MergeSortedArrays {
     public static void main(String[] args) {
         int[] arr1 = {0, 3, 4, 31};
         int[] arr2 = {4, 6, 30, 32};
-        display(mergeSortedArrays(arr1, arr2));
+        Util.print(mergeSortedArrays(arr1, arr2));
     }
 
     private static int[] mergeSortedArrays(int[] arr1, int[] arr2) {
@@ -67,11 +69,5 @@ public class MergeSortedArrays {
         --indexForMergedArr;
 
         return mergedArr;
-    }
-
-    private static void display(int[] arr){
-        for(int item : arr){
-            System.out.print(item+ " ");
-        }
     }
 }

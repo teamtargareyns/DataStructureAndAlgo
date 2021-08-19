@@ -1,6 +1,8 @@
 package com.test.udemy.arrays;
 
 
+import com.test.udemy.Util;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -61,10 +63,10 @@ public class TwoSum {
         //int[] nums = {2,9,11,15,8,7}; //answer - //7//0//-4//-6//1//7-found
         int target = 9;
         //print array received
-        print(findTwoSum(nums, target));
+        Util.print(findTwoSum(nums, target));
     }
 
-    private static int[] findTwoSum(int[] nums, int target){
+    private static int[] findTwoSum(final int[] nums, final int target){
         int [] indicesArr = new int[2];
         Map complementMap = new HashMap<Integer, Integer>();
         for (int i=0; i< nums.length; i++){
@@ -77,11 +79,5 @@ public class TwoSum {
             }
         }
         return indicesArr;
-    }
-
-    private static void print(int[] arr){
-        for(int item : arr){
-            System.out.print(item+ ", ");
-        }
     }
 }
