@@ -43,7 +43,7 @@ public class MoveZerosOptimized {
 
     public static void main(String[] args) {
         //int[] nums = {0,0,3,0,5,1};
-        int[] nums = {4, 2, 4, 0, 0, 3, 0, 5, 1, 0}; //time limit exceeded
+        int[] nums = {4, 2, 4, 0, 0, 3, 0, 5, 1, 0}; //time limit exceeded - SOLVED WITH 100% best solution - 0ms runtime
         //int[] nums = {0,1,0};
         //int[] nums = {2,1,};
         //int[] nums = {0,1,0,3,12};
