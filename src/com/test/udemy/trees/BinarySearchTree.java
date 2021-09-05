@@ -91,6 +91,7 @@ public class BinarySearchTree {
     }
 
     static void printPostorder(Node node) {
+        //always have the base case first to break recusion and avoid stack over flow
         if (node == null)
             return;
 
@@ -106,6 +107,7 @@ public class BinarySearchTree {
 
     /* Given a binary tree, print its nodes in inorder*/
     static void printInorder(Node node) {
+        //always have the base case first to break recusion and avoid stack over flow
         if (node == null)
             return;
 
@@ -121,6 +123,7 @@ public class BinarySearchTree {
 
     /* Given a binary tree, print its nodes in preorder*/
     static void printPreorder(Node node) {
+        //always have the base case first to break recusion and avoid stack over flow
         if (node == null)
             return;
 
