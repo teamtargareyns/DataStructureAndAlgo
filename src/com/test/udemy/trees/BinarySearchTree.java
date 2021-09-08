@@ -1,5 +1,13 @@
 package com.test.udemy.trees;
 
+
+/**
+ * Use visual go for understanding the tree traversal
+ */
+//TREE -
+//        9
+//   4          20
+//1     6   15      170
 public class BinarySearchTree {
 
     Node root = null;
@@ -16,7 +24,11 @@ public class BinarySearchTree {
         }
     }
 
-    private void insert(int value) {
+    public Node getRoot(){
+        return root;
+    }
+
+    public void insert(int value) {
         Node newNode = new Node(value);
         //check if root node is empty
         if (root == null) {
@@ -67,30 +79,7 @@ public class BinarySearchTree {
         return false;
     }
 
-    public static void main(String[] args) {
-        //create 1st node
-        BinarySearchTree tree = new BinarySearchTree();
-        //
-        tree.insert(9);
-        tree.insert(4);
-        tree.insert(6);
-        tree.insert(20);
-        tree.insert(170);
-        tree.insert(15);
-        tree.insert(1);
-        //lookup
-        //System.out.println(tree.lookup(170));
-        //print
-        System.out.println("printInorder");
-        printInorder(tree.root);
-        System.out.println("\n\nprintPreorder");
-        printPreorder(tree.root);
-        System.out.println("\n\nprintPostorder");
-        printPostorder(tree.root);
-
-    }
-
-    static void printPostorder(Node node) {
+    public void printPostorder(Node node) {
         //always have the base case first to break recusion and avoid stack over flow
         if (node == null)
             return;
@@ -106,7 +95,7 @@ public class BinarySearchTree {
     }
 
     /* Given a binary tree, print its nodes in inorder*/
-    static void printInorder(Node node) {
+    public void printInorder(Node node) {
         //always have the base case first to break recusion and avoid stack over flow
         if (node == null)
             return;
@@ -122,7 +111,7 @@ public class BinarySearchTree {
     }
 
     /* Given a binary tree, print its nodes in preorder*/
-    static void printPreorder(Node node) {
+    public void printPreorder(Node node) {
         //always have the base case first to break recusion and avoid stack over flow
         if (node == null)
             return;
@@ -136,4 +125,31 @@ public class BinarySearchTree {
         /* now recur on right subtree */
         printPreorder(node.right);
     }
+
+    public static void main(String[] args) {
+        //create 1st node
+        BinarySearchTree tree = new BinarySearchTree();
+        //
+        tree.insert(9);
+        tree.insert(4);
+        tree.insert(6);
+        tree.insert(20);
+        tree.insert(170);
+        tree.insert(15);
+        tree.insert(1);
+        //lookup
+        //System.out.println(tree.lookup(170));
+
+        //print
+        //System.out.println("printInorder");
+        //tree.printInorder(tree.root);
+
+        //System.out.println("\n\nprintPreorder");
+        //tree.printPreorder(tree.root);
+
+        //System.out.println("\n\nprintPostorder");
+        //tree.printPostorder(tree.root);
+    }
+
+
 }
