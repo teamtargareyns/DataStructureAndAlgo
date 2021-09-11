@@ -1,9 +1,6 @@
 package com.test.udemy.trees;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class ZigzagTreeTraversal {
 
@@ -55,11 +52,84 @@ public class ZigzagTreeTraversal {
         }
     }
 
+    public List<List<Integer>> zigzagTraversalUsingQueue(Node root) {
 
-    //use two stacks and one list to return the result
-    /*private List<Integer> printZigZagTree(Queue<Node> queue, List<Integer> list) {
+        List<List<Integer>> answer = new ArrayList<List<Integer>>();
 
-    }*/
+        if(root == null) return answer;
+
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        boolean flag = true;
+
+        while(!q.isEmpty()) {
+
+            int count = q.size();
+            List<Integer> temp = new ArrayList<>();
+
+            while(count-- >0) {
+
+                Node front = q.poll();
+
+                if(flag) temp.add(front.value);
+                else temp.add(0,front.value);
+
+                if(front.left != null) q.add(front.left);
+                if(front.right != null) q.add(front.right);
+            }
+
+            answer.add(temp);
+
+            if(flag) flag = false;
+            else flag = true;
+        }
+
+        return answer;
+    }
+
+
+    public List<List<Integer>> zigzagTraversalUsingStacks(Node root) {
+
+        List<List<Integer>> answer = new ArrayList<List<Integer>>();
+
+        if(root == null) return answer;
+
+        Stack<Node> first = new Stack<>();
+        Stack<Node> second = new Stack<>();
+
+        first.push(root);
+
+        while(!first.empty()){
+
+            List<Integer> temp = new ArrayList<>();
+
+            while(!first.empty()){
+
+                Node a = first.pop();
+                temp.add(a.value);
+                if(a.left != null) second.push(a.left);
+                if(a.right != null) second.push(a.right);
+            }
+
+            answer.add(temp);
+
+            if(second.empty()) return answer;
+
+            temp = new ArrayList<>();
+
+            while(!second.empty()){
+
+                Node b = second.pop();
+                temp.add(b.value);
+                if(b.right != null) first.push(b.right);
+                if(b.left != null) first.push(b.left);
+            }
+
+            answer.add(temp);
+        }
+
+        return answer;
+    }
 
     public static void main(String[] args) {
         //create 1st node
