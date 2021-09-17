@@ -98,7 +98,7 @@ public class LongestSubString {
         return res;
     }
 
-    //14ms solution
+    //14ms solution - GO WITH THIS SOLUTION
     public int lengthOfLongestSubstringBestSolution(String s) {
         int longest = 0, i = 0, j = 0, n = s.length();
         Set<Character> set = new HashSet<>();
