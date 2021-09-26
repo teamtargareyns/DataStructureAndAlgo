@@ -11,9 +11,46 @@ import java.util.Queue;
  */
 public class PalindromeLinkedList {
 
-    public static void main(String[] args) {
-        Queue<Integer> queue = new LinkedList();
+    static class Node {
+        int value;
+        Node next;
 
-        List<List<Integer>> wrapList = new ArrayList();
+        Node(int val) {
+            this.value = val;
+            this.next = null;
+        }
+    }
+
+    public boolean isPalindrome(Node head) {
+        Node fast = head, slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        if (fast != null) { // odd nodes: let right half smaller
+            slow = slow.next;
+        }
+        slow = reverse(slow);
+        fast = head;
+
+        while (slow != null) {
+            if (fast.value != slow.value) {
+                return false;
+            }
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return true;
+    }
+
+    public Node reverse(Node head) {
+        Node prev = null;
+        while (head != null) {
+            Node next = head.next;
+            head.next = prev;
+            prev = head;
+            head = next;
+        }
+        return prev;
     }
 }
