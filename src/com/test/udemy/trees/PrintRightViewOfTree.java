@@ -70,12 +70,12 @@ public class PrintRightViewOfTree {
     private List<Integer> printRightViewOfBinaryTree(Node root) {
         //list.addAll(rightViewUtil(root, 1, mxLvl));
         rightViewUtil(root, 1, mxLvl);
+        //System.out.println("maxLength = "+mxLvl.maxLevelSoFar);
         return list;
     }
 
     // Recursive function to print right view of a binary tree.
     private void rightViewUtil(Node node, int level, MaxLevel maxLevel) {
-
         // Base Case
         if (node == null)
             return;

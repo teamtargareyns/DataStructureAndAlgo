@@ -96,7 +96,7 @@ public class BinarySearchTree {
 
     /* Given a binary tree, print its nodes in inorder*/
     public void printInorder(Node node) {
-        //always have the base case first to break recusion and avoid stack over flow
+        //always have the base case first to break recursion and avoid stack over flow
         if (node == null)
             return;
 

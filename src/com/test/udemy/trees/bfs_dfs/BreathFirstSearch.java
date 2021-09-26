@@ -117,21 +117,23 @@ public class BreathFirstSearch {
         System.out.println(printBreathFirstSearchRec(queue, new LinkedList()));
     }
 
-    //            5
-    //      4           6
-    //              3       7
+
+    //2147483647 is the maximum integer value. The code is written to say the node must have a value less than whatever is passed as the max of the range, which is good because we want to be sure the same value isn't in the tree twice. However, any possible int value should be allowed, so setting the max to 2147483647 (Integer.MAX_VALUE)
+    //at the start doesn't work because then we get a failure for a tree that has the value 2147483647.
+    //If you use a long for the max and min that are passed around, you can use Long.MAX_VALUE instead (which will be larger)
+    //as well as Long.MIN_VALUE. Alternatively, you can use an Integer instead of int and set the initial value to null,
+    // then write some conditional logic that if max is set to null you don't need to do the comparison.
     public boolean isValidBST(Node node) {
-        if (node == null)
-            return true;
+        return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
+    }
 
-        if(node.left != null && node.left.value > node.value)
-            return false;
+    //Basically what I am doing is recursively iterating over the tree while defining interval <minVal, maxVal> for each node which value must fit in.
+    public boolean isValidBST(Node root, long minVal, long maxVal) {
+        if (root == null) return true;
 
-        if(node.right != null && node.right.value < node.value)
-            return false;
+        if (root.value >= maxVal || root.value <= minVal) return false;
 
-        return (!isValidBST(node.left) || !isValidBST(node.right));
-
+        return isValidBST(root.left, minVal, root.value) && isValidBST(root.right, root.value, maxVal);
     }
 
 
@@ -163,8 +165,8 @@ public class BreathFirstSearch {
         tree.insert(7);*/
 
         //BFS Traversal
-        System.out.println(tree.printBreathFirstSearch());
-        //tree.callPrintBreathFirstSearchRec();
+        //System.out.println(tree.printBreathFirstSearch());
+        tree.callPrintBreathFirstSearchRec();
 
         //validate a BST
         //System.out.println(tree.isValidBST(tree.root));

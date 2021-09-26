@@ -30,6 +30,18 @@ public class LinkedList {
         tail = newNode;
     }
 
+    public Node mergeTwoLists(Node l1, Node l2) {
+        if(l1 == null) return l2;
+        if(l2 == null) return l1;
+        if(l1.value < l2.value){
+            l1.next = mergeTwoLists(l1.next, l2);
+            return l1;
+        } else{
+            l2.next = mergeTwoLists(l1, l2.next);
+            return l2;
+        }
+    }
+
     public static void main(String[] args) {
         //create 1st node
         LinkedList list = new LinkedList();

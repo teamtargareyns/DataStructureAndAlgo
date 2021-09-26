@@ -104,7 +104,6 @@ public class ZigzagTreeTraversal {
             List<Integer> temp = new ArrayList<>();
 
             while(!first.empty()){
-
                 Node a = first.pop();
                 temp.add(a.value);
                 if(a.left != null) second.push(a.left);

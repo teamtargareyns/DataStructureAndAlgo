@@ -38,8 +38,10 @@ public class FizzBuzz {
         FizzBuzz fizzBuzz = new FizzBuzz();
         System.out.println(fizzBuzz.fizzBuzz(3));
         //will return 0 if less than divisor
-        //System.out.println(1/3);
+        System.out.println(0/3);
+        System.out.println(1/3);
         //will return same number if less than divisor
-        //System.out.println(1%3);
+        System.out.println(0%3);
+        System.out.println(1%3);
     }
 }

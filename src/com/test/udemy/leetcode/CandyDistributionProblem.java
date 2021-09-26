@@ -29,7 +29,7 @@ public class CandyDistributionProblem {
         //traverse right to left and start from 2nd last item
         for(int i=ratings.length-2; i>=0; i--){
             if(ratings[i] > ratings[i+1]){
-                rightToLeft[i] = leftToRight[i+1] + 1;
+                rightToLeft[i] = rightToLeft[i+1] + 1;
             }
         }
 

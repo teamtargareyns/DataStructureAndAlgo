@@ -15,6 +15,26 @@ import java.util.*;
  * 4. add new char to set now, and continue iterating
  * 5. repeat the steps
  */
+
+/**
+ * The idea is use a hash set to track the longest substring without repeating characters so far, use a fast pointer j to see if character j is in the hash set or not, if not, great, add it to the hash set, move j forward and update the max length, otherwise, delete from the head by using a slow pointer i until we can put character j to the hash set.
+ *
+ * public int lengthOfLongestSubstring(String s) {
+ *     int i = 0, j = 0, max = 0;
+ *     Set<Character> set = new HashSet<>();
+ *
+ *     while (j < s.length()) {
+ *         if (!set.contains(s.charAt(j))) {
+ *             set.add(s.charAt(j++));
+ *             max = Math.max(max, set.size());
+ *         } else {
+ *             set.remove(s.charAt(i++));
+ *         }
+ *     }
+ *
+ *     return max;
+ * }
+ */
 public class LongestSubString {
 
     private int longestSubString(String str) {
@@ -99,7 +119,7 @@ public class LongestSubString {
     }
 
     //14ms solution - GO WITH THIS SOLUTION
-    public int lengthOfLongestSubstringBestSolution(String s) {
+    public int lengthOfLongestSubstringBestSolution_v1(String s) {
         int longest = 0, i = 0, j = 0, n = s.length();
         Set<Character> set = new HashSet<>();
         while (i < n && j < n) {
@@ -119,6 +139,25 @@ public class LongestSubString {
         }
 
         return longest;
+    }
+
+    //The idea is use a hash set to track the longest substring without repeating characters so far, use a fast pointer j to see if character j is in the hash set or not, if not, great, add it to the hash set, move j forward and update the max length,
+    //otherwise, delete from the head by using a slow pointer i until we can put character j to the hash set.
+    public int lengthOfLongestSubstringBestSolution_v2(String str) {
+        int i = 0, j = 0, max = 0;
+        Set<Character> set = new HashSet<>();
+        while (j < str.length()) {
+            if (!set.contains(str.charAt(j))) {
+                set.add(str.charAt(j));
+                max = Math.max(max, set.size());
+                j++;
+            } else {
+                set.remove(str.charAt(i));
+                i++;
+            }
+        }
+
+        return max;
     }
 
     /**
