@@ -89,9 +89,7 @@ public class ZigzagTreeTraversal {
 
 
     public List<List<Integer>> zigzagTraversalUsingStacks(Node root) {
-
         List<List<Integer>> answer = new ArrayList<List<Integer>>();
-
         if(root == null) return answer;
 
         Stack<Node> first = new Stack<>();
@@ -100,9 +98,7 @@ public class ZigzagTreeTraversal {
         first.push(root);
 
         while(!first.empty()){
-
             List<Integer> temp = new ArrayList<>();
-
             while(!first.empty()){
                 Node a = first.pop();
                 temp.add(a.value);
@@ -113,9 +109,7 @@ public class ZigzagTreeTraversal {
             answer.add(temp);
 
             if(second.empty()) return answer;
-
             temp = new ArrayList<>();
-
             while(!second.empty()){
 
                 Node b = second.pop();
@@ -123,7 +117,6 @@ public class ZigzagTreeTraversal {
                 if(b.right != null) first.push(b.right);
                 if(b.left != null) first.push(b.left);
             }
-
             answer.add(temp);
         }
 

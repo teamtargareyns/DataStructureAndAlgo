@@ -47,15 +47,13 @@ public class LongestSubString {
         while (i < n && j < n) {
             //this option keeps on removing items until all occurences of the items are removed
             if (set.contains(s.charAt(j))) {
-                System.out.println("charAt : " + s.charAt(j));
-                System.out.println("set1 : " + set.toString());
-                set.remove(s.charAt(i++));
-                System.out.println("set1 - aftr remove: " + set.toString());
+                set.remove(s.charAt(i));
+                i++;
             } else {
                 //now either add a new item or the previously removed repeating item which is no more available
                 //in the set
-                set.add(s.charAt(j++));
-                System.out.println("set2 : " + set.toString());
+                set.add(s.charAt(j));
+                j++;
                 longest = Math.max(longest, j - i);
             }
         }

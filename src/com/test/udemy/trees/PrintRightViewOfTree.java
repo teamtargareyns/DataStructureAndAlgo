@@ -19,9 +19,11 @@ public class PrintRightViewOfTree {
     List<Integer> list = new ArrayList();
     MaxLevel mxLvl = new MaxLevel(0);
 
+    //
     Node root = null;
     Queue<Node> queue = new LinkedList<>();
 
+    //
     static class Node {
         int value;
         Node left;
@@ -31,6 +33,14 @@ public class PrintRightViewOfTree {
             this.value = val;
             this.left = null;
             this.right = null;
+        }
+    }
+
+    //
+    static class MaxLevel {
+        int maxLevelSoFar;
+        MaxLevel(int initalValue) {
+            this.maxLevelSoFar = initalValue;
         }
     }
 
@@ -89,14 +99,6 @@ public class PrintRightViewOfTree {
         // Recur for right subtree first, then left subtree
         rightViewUtil(node.right, level + 1, maxLevel);
         rightViewUtil(node.left, level + 1, maxLevel);
-    }
-
-    static class MaxLevel {
-        int maxLevelSoFar;
-
-        MaxLevel(int initalValue) {
-            this.maxLevelSoFar = initalValue;
-        }
     }
 
     public static void main(String[] args) {

@@ -14,10 +14,6 @@ import java.util.Queue;
 
 public class TreeMaxDepth {
 
-    Node root = null;
-    List<Integer> list = new ArrayList();
-    Queue<Node> queue = new LinkedList<>();
-
     static class Node {
         int value;
         Node left;
@@ -33,6 +29,10 @@ public class TreeMaxDepth {
     public int maxDepth(Node root) {
         if (root == null) {
             return 0;
+        }
+
+        if (root.left == null && root.right == null) {
+            return 1;
         }
 
         return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
